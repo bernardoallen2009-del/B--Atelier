@@ -59,4 +59,4 @@ Change it in `src/components/BookingForm.tsx` and `src/components/Footer.tsx`.
 
 ## Images
 
-Replace the image files in `src/assets/images/` with final Bé Atelier photography when ready. Keep the same filenames if you do not want to update imports.
+Current photography lives in `src/assets/images/`. To replace photos later, keep the same filenames if you do not want to update imports in `src/data/gallery.ts`.
