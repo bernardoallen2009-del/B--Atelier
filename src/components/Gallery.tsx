@@ -3,20 +3,20 @@ import { galleryImages, type GalleryImage } from "../data/gallery";
 import SectionTitle from "./SectionTitle";
 
 const galleryAspectRatios = [
-  "aspect-[4/5]",
+  "aspect-square sm:aspect-[4/5]",
   "aspect-square",
   "aspect-square",
-  "aspect-[5/4]",
-  "aspect-[5/4]",
+  "aspect-square sm:aspect-[5/4]",
+  "aspect-square sm:aspect-[5/4]",
   "aspect-square",
-  "aspect-[4/5]",
-  "aspect-[5/4]",
-  "aspect-[4/5]",
+  "aspect-square sm:aspect-[4/5]",
+  "aspect-square sm:aspect-[5/4]",
+  "aspect-square sm:aspect-[4/5]",
   "aspect-square",
   "aspect-square",
-  "aspect-[4/5]",
+  "aspect-square sm:aspect-[4/5]",
   "aspect-square",
-  "aspect-[4/5]",
+  "aspect-square sm:aspect-[4/5]",
   "aspect-square"
 ];
 
@@ -32,7 +32,7 @@ export default function Gallery() {
           subtitle="Food, details and moments from previous dinners."
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-4 lg:grid-cols-3">
           {galleryImages.map((image, index) => (
             <button
               key={image.title}
@@ -46,7 +46,7 @@ export default function Gallery() {
                 alt={image.alt}
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
               />
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/55 to-transparent p-4 pt-16 text-sm font-medium text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100">
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/55 to-transparent p-3 pt-10 text-xs font-medium text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100 sm:p-4 sm:pt-16 sm:text-sm">
                 {image.title}
               </span>
             </button>

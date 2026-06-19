@@ -43,7 +43,7 @@ export default function BookingForm() {
   return (
     <section id="booking" className="anchor-section section-spacing bg-white/35">
       <div className="section-shell">
-        <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
           <div>
             <SectionTitle
               eyebrow="Book"
@@ -54,14 +54,14 @@ export default function BookingForm() {
               href={instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex rounded-full border border-charcoal/20 px-5 py-3 text-sm font-semibold text-charcoal transition hover:border-clay hover:text-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/40"
+              className="mt-6 inline-flex rounded-full border border-charcoal/20 px-5 py-3 text-sm font-semibold text-charcoal transition hover:border-clay hover:text-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 sm:mt-8"
             >
               Contact on Instagram
             </a>
           </div>
 
-          <form onSubmit={handleSubmit} className="grid gap-5">
-            <div className="grid gap-5 sm:grid-cols-2">
+          <form onSubmit={handleSubmit} className="grid gap-4 sm:gap-5">
+            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
               <Field label="Name" name="name" type="text" required />
               <Field label="Email" name="email" type="email" required />
               <Field label="Phone / WhatsApp" name="phone" type="tel" />
@@ -88,7 +88,7 @@ export default function BookingForm() {
 
             <button
               type="submit"
-              className="mt-2 inline-flex w-full justify-center rounded-full bg-charcoal px-6 py-4 text-sm font-semibold text-ivory transition hover:bg-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 sm:w-auto"
+              className="mt-2 inline-flex w-full justify-center rounded-full bg-charcoal px-6 py-3.5 text-sm font-semibold text-ivory transition hover:bg-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 sm:w-auto sm:py-4"
             >
               Send request
             </button>
