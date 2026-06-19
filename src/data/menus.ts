@@ -75,9 +75,9 @@ export const menus: Menu[] = [
       },
       {
         label: "Main",
-        name: "Saffron Risotto, Almonds & Duck Magret",
+        name: "Coriander Risotto, Duck Magret & Orange Gel",
         description:
-          "Creamy arborio rice with saffron, toasted almonds and pink duck magret with golden, crisp skin."
+          "Creamy arborio rice infused with coriander, served with pink duck magret and crisp skin, finished with orange gel."
       },
       {
         label: "Dessert",
@@ -95,16 +95,8 @@ export const additionalDishes: AdditionalDish[] = [
     description: "Creamy arborio rice with sautéed mushrooms, parmesan, butter and fresh herbs."
   },
   {
-    name: "Coriander Risotto, Duck Magret & Orange Gel",
+    name: "Saffron Risotto, Almonds & Duck Magret",
     description:
-      "Creamy arborio rice infused with coriander, served with pink duck magret and crisp skin, finished with orange gel."
-  },
-  {
-    name: "Fresh Tagliatelle with Ragù",
-    description: "Handmade egg pasta with slow-cooked meat ragù."
-  },
-  {
-    name: "Tarte Tatin & Kiwi Ice Cream",
-    description: "Warm caramelised apple tart with homemade kiwi ice cream."
+      "Creamy arborio rice with saffron, toasted almonds and pink duck magret with golden, crisp skin."
   }
 ];
