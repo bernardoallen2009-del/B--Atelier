@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1e1e1c;
+  background: #f7f3ec;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(164, 134, 104, 0.08), transparent 28rem),
+    #f7f3ec;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(164, 134, 104, 0.22);
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-[1180px] px-5 sm:px-8 lg:px-10;
+}
+
+.section-spacing {
+  @apply py-20 sm:py-24 lg:py-28;
+}
+
+.anchor-section {
+  scroll-margin-top: 96px;
+}
+
+.fine-border {
+  @apply border border-charcoal/10;
+}
+
+.reveal {
+  animation: fadeUp 700ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    animation: none;
+  }
+}
