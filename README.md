@@ -44,15 +44,15 @@ src/components/
 The booking form currently opens a pre-filled email to:
 
 ```text
-hello@beatelier.pt
+bernardoallen@icloud.com
 ```
 
 To change it, edit `bookingEmail` in `src/components/BookingForm.tsx`.
 
-The Instagram link is a placeholder:
+The Instagram link is:
 
 ```text
-https://instagram.com/USERNAME_PLACEHOLDER
+https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr
 ```
 
 Change it in `src/components/BookingForm.tsx` and `src/components/Footer.tsx`.

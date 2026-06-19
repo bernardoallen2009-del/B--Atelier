@@ -1,6 +1,9 @@
 const links = [
-  { label: "Instagram", href: "https://instagram.com/USERNAME_PLACEHOLDER" },
-  { label: "Email", href: "mailto:hello@beatelier.pt" },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr"
+  },
+  { label: "Email", href: "mailto:bernardoallen@icloud.com" },
   { label: "Menus", href: "#menus" },
   { label: "Book", href: "#booking" }
 ];

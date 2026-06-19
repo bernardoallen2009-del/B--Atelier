@@ -1,8 +1,9 @@
 import type { FormEvent } from "react";
 import SectionTitle from "./SectionTitle";
 
-const bookingEmail = "hello@beatelier.pt";
-const instagramUrl = "https://instagram.com/USERNAME_PLACEHOLDER";
+const bookingEmail = "bernardoallen@icloud.com";
+const instagramUrl =
+  "https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr";
 
 const menuOptions = ["Bé Signature", "Italian Comfort", "Atelier Menu", "Custom / Not sure yet"];
 
