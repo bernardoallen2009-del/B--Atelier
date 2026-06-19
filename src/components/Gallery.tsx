@@ -2,13 +2,22 @@ import { useState } from "react";
 import { galleryImages, type GalleryImage } from "../data/gallery";
 import SectionTitle from "./SectionTitle";
 
-const galleryLayout = [
-  "sm:col-span-2 sm:row-span-2",
-  "",
-  "",
-  "",
-  "sm:col-span-2",
-  ""
+const galleryAspectRatios = [
+  "aspect-[4/5]",
+  "aspect-square",
+  "aspect-square",
+  "aspect-[5/4]",
+  "aspect-[5/4]",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-[5/4]",
+  "aspect-[4/5]",
+  "aspect-square",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-square",
+  "aspect-[4/5]",
+  "aspect-square"
 ];
 
 export default function Gallery() {
@@ -23,13 +32,13 @@ export default function Gallery() {
           subtitle="Food, details and moments from previous dinners."
         />
 
-        <div className="mt-12 grid auto-rows-[220px] gap-4 sm:grid-cols-4 sm:auto-rows-[190px] lg:auto-rows-[230px]">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((image, index) => (
             <button
               key={image.title}
               type="button"
               onClick={() => setSelectedImage(image)}
-              className={`group relative overflow-hidden rounded-sm bg-linen text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${galleryLayout[index] ?? ""}`}
+              className={`group relative overflow-hidden rounded-sm bg-linen text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${galleryAspectRatios[index] ?? "aspect-square"}`}
               aria-label={`Open image: ${image.title}`}
             >
               <img
