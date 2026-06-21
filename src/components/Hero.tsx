@@ -1,4 +1,4 @@
-import heroImage from "../assets/images/risotto-prawns.jpg";
+import heroImage from "../assets/images/coriander-duck-risotto.jpg";
 
 export default function Hero() {
   return (
@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="absolute -left-5 -top-5 hidden h-28 w-28 border border-clay/25 sm:block" />
         <img
           src={heroImage}
-          alt="Pumpkin risotto with prawns served on a ceramic plate"
+          alt="Coriander risotto with duck magret and orange gel"
           className="aspect-[5/4] max-h-[360px] w-full rounded-sm object-cover shadow-soft sm:aspect-[4/5] sm:max-h-none lg:aspect-[5/6]"
         />
         <p className="mt-3 max-w-sm text-xs leading-5 text-warmgray sm:mt-4 sm:text-sm sm:leading-6">
