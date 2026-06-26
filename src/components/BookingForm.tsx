@@ -66,7 +66,7 @@ export default function BookingForm() {
               <Field label="Email" name="email" type="email" required />
               <Field label="Phone / WhatsApp" name="phone" type="tel" />
               <Field label="Preferred date" name="preferredDate" type="date" />
-              <Field label="Number of guests" name="guests" type="number" min="4" max="10" />
+              <Field label="Number of guests" name="guests" type="number" min="4" max="14" />
               <Field label="Location" name="location" type="text" />
             </div>
 

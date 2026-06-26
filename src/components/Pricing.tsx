@@ -1,8 +1,8 @@
 import SectionTitle from "./SectionTitle";
 
 const prices = [
-  { guests: "4-7 guests", price: "EUR 40", note: "per person" },
-  { guests: "8-10 guests", price: "EUR 35", note: "per person" }
+  { guests: "4-8 guests", price: "EUR 40", note: "per person" },
+  { guests: "9-14 guests", price: "EUR 35", note: "per person" }
 ];
 
 export default function Pricing() {

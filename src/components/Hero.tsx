@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="top" className="section-shell grid items-center gap-8 py-10 sm:min-h-[calc(100vh-64px)] sm:gap-12 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
       <div className="reveal max-w-xl">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-clay sm:mb-4 sm:text-xs sm:tracking-[0.24em]">
-          Lisbon | 4-10 guests
+          Lisbon | 4-14 guests
         </p>
         <h1 className="font-serif text-5xl font-semibold leading-[0.9] text-charcoal sm:text-7xl lg:text-8xl">
           Bé Atelier

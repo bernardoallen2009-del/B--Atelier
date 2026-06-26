@@ -1,6 +1,6 @@
 import SectionTitle from "./SectionTitle";
 
-const points = ["Handmade menus", "Careful plating", "Intimate dinners for 4-10 guests"];
+const points = ["Handmade menus", "Careful plating", "Intimate dinners for 4-14 guests"];
 
 export default function About() {
   return (
