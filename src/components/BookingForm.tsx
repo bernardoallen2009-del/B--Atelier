@@ -1,4 +1,5 @@
-import type { FormEvent } from "react";
+import type { ChangeEvent, FormEvent } from "react";
+import { useState } from "react";
 import SectionTitle from "./SectionTitle";
 
 const bookingEmail = "bernardoallen@icloud.com";
@@ -6,6 +7,7 @@ const instagramUrl =
   "https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr";
 
 const menuOptions = ["Bé Signature", "Italian Comfort", "Atelier Menu", "Custom / Not sure yet"];
+const familyNightOptions = ["No", "Yes, family support for children"];
 
 function getField(formData: FormData, name: string) {
   return String(formData.get(name) ?? "").trim();
@@ -13,6 +15,19 @@ function getField(formData: FormData, name: string) {
 
 function buildMailto(formData: FormData) {
   const subject = "Private dinner request - Bé Atelier";
+  const familyNight = getField(formData, "familyNight");
+  const familyNightDetails =
+    familyNight === familyNightOptions[1]
+      ? [
+          "",
+          "Family Night details:",
+          `Number of children: ${getField(formData, "childrenCount") || "Not shared"}`,
+          `Ages of children: ${getField(formData, "childrenAges") || "Not shared"}`,
+          `Allergies or important information: ${getField(formData, "childrenInfo") || "None shared"}`,
+          `Preferred activities / screen time allowed: ${getField(formData, "childrenActivities") || "Not shared"}`,
+          `Bedtime routine or special notes: ${getField(formData, "childrenRoutine") || "Not shared"}`
+        ]
+      : [];
   const body = [
     "New private dinner request",
     "",
@@ -23,6 +38,8 @@ function buildMailto(formData: FormData) {
     `Number of guests: ${getField(formData, "guests")}`,
     `Location: ${getField(formData, "location")}`,
     `Menu preference: ${getField(formData, "menuPreference")}`,
+    `Family Night support: ${familyNight}`,
+    ...familyNightDetails,
     "",
     "Allergies or dietary restrictions:",
     getField(formData, "allergies") || "None shared",
@@ -35,9 +52,16 @@ function buildMailto(formData: FormData) {
 }
 
 export default function BookingForm() {
+  const [familyNight, setFamilyNight] = useState(familyNightOptions[0]);
+  const wantsFamilyNight = familyNight === familyNightOptions[1];
+
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     window.location.href = buildMailto(new FormData(event.currentTarget));
+  }
+
+  function handleFamilyNightChange(event: ChangeEvent<HTMLSelectElement>) {
+    setFamilyNight(event.target.value);
   }
 
   return (
@@ -82,6 +106,32 @@ export default function BookingForm() {
                 ))}
               </select>
             </label>
+
+            <label className="grid gap-2 text-sm font-medium text-charcoal">
+              Would you like to add Family Night support?
+              <select
+                name="familyNight"
+                className="rounded-none border border-charcoal/15 bg-ivory px-4 py-3 text-charcoal outline-none transition focus:border-clay focus:ring-2 focus:ring-clay/20"
+                value={familyNight}
+                onChange={handleFamilyNightChange}
+              >
+                {familyNightOptions.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+
+            {wantsFamilyNight ? (
+              <div className="fine-border grid gap-4 bg-ivory/70 p-4 sm:grid-cols-2 sm:gap-5 sm:p-5">
+                <Field label="Number of children" name="childrenCount" type="number" min="1" />
+                <Field label="Ages of children" name="childrenAges" type="text" />
+                <TextArea label="Any allergies or important information?" name="childrenInfo" rows={3} />
+                <TextArea label="Preferred activities / screen time allowed?" name="childrenActivities" rows={3} />
+                <div className="sm:col-span-2">
+                  <TextArea label="Bedtime routine or special notes?" name="childrenRoutine" rows={3} />
+                </div>
+              </div>
+            ) : null}
 
             <TextArea label="Allergies or dietary restrictions" name="allergies" rows={3} />
             <TextArea label="Message" name="message" rows={5} />

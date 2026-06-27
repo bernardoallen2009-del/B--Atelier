@@ -1,6 +1,7 @@
 const navItems = [
   { label: "About", href: "#about" },
   { label: "Menus", href: "#menus" },
+  { label: "Family Night", href: "#family-night" },
   { label: "Gallery", href: "#gallery" },
   { label: "Book", href: "#booking" }
 ];

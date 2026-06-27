@@ -43,6 +43,7 @@ export default function Pricing() {
 
             <div className="mt-6 space-y-3 text-sm leading-6 text-warmgray sm:mt-8">
               <p>Drinks, tableware rental and special premium ingredients are not included unless agreed in advance.</p>
+              <p>Family Night support is charged as one additional guest in the final quote.</p>
               <p>Final price may vary for highly customised menus or locations outside Lisbon.</p>
             </div>
           </div>
