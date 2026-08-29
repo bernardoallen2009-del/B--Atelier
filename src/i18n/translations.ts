@@ -78,6 +78,9 @@ export type Translation = {
       email: string;
       phone: string;
       date: string;
+      dateSelectPlaceholder: string;
+      datePrevMonth: string;
+      dateNextMonth: string;
       guests: string;
       location: string;
       menuPreference: string;
@@ -231,6 +234,9 @@ export const translations: Record<Lang, Translation> = {
         email: "Email",
         phone: "Phone / WhatsApp",
         date: "Preferred date",
+        dateSelectPlaceholder: "Select a date",
+        datePrevMonth: "Previous month",
+        dateNextMonth: "Next month",
         guests: "Number of guests",
         location: "Location",
         menuPreference: "Menu preference",
@@ -382,6 +388,9 @@ export const translations: Record<Lang, Translation> = {
         email: "Email",
         phone: "Telefone / WhatsApp",
         date: "Data preferida",
+        dateSelectPlaceholder: "Selecionar uma data",
+        datePrevMonth: "Mês anterior",
+        dateNextMonth: "Mês seguinte",
         guests: "Número de convidados",
         location: "Localização",
         menuPreference: "Preferência de menu",

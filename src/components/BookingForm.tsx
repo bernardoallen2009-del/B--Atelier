@@ -1,7 +1,9 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { useEffect, useState } from "react";
+import DatePicker, { localeMap } from "./DatePicker";
 import SectionTitle from "./SectionTitle";
 import { useLanguage } from "../i18n/LanguageContext";
+import type { Lang } from "../i18n/types";
 import type { Translation } from "../i18n/translations";
 
 const bookingEmail = "bernardoallen@icloud.com";
@@ -12,7 +14,19 @@ function getField(formData: FormData, name: string) {
   return String(formData.get(name) ?? "").trim();
 }
 
-function buildMailto(formData: FormData, t: Translation) {
+function formatPreferredDate(value: string, language: Lang, fallback: string) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  if (!match) return fallback;
+  const [, year, month, day] = match;
+  const date = new Date(Number(year), Number(month) - 1, Number(day));
+  return new Intl.DateTimeFormat(localeMap[language], {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  }).format(date);
+}
+
+function buildMailto(formData: FormData, t: Translation, language: Lang) {
   const mail = t.booking.mail;
   const familyNight = getField(formData, "familyNight");
   const familyNightDetails =
@@ -33,7 +47,7 @@ function buildMailto(formData: FormData, t: Translation) {
     `${mail.name}: ${getField(formData, "name")}`,
     `${mail.email}: ${getField(formData, "email")}`,
     `${mail.phone}: ${getField(formData, "phone")}`,
-    `${mail.date}: ${getField(formData, "preferredDate")}`,
+    `${mail.date}: ${formatPreferredDate(getField(formData, "preferredDate"), language, mail.notShared)}`,
     `${mail.guests}: ${getField(formData, "guests")}`,
     `${mail.location}: ${getField(formData, "location")}`,
     `${mail.menuPreference}: ${getField(formData, "menuPreference")}`,
@@ -53,6 +67,7 @@ function buildMailto(formData: FormData, t: Translation) {
 export default function BookingForm() {
   const { t, language } = useLanguage();
   const [familyNight, setFamilyNight] = useState(t.booking.familyNightOptions[0]);
+  const [preferredDate, setPreferredDate] = useState("");
   const wantsFamilyNight = familyNight === t.booking.familyNightOptions[1];
 
   useEffect(() => {
@@ -61,7 +76,7 @@ export default function BookingForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = buildMailto(new FormData(event.currentTarget), t);
+    window.location.href = buildMailto(new FormData(event.currentTarget), t, language);
   }
 
   function handleFamilyNightChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -93,7 +108,12 @@ export default function BookingForm() {
               <Field label={t.booking.fields.name} name="name" type="text" required />
               <Field label={t.booking.fields.email} name="email" type="email" required />
               <Field label={t.booking.fields.phone} name="phone" type="tel" />
-              <Field label={t.booking.fields.date} name="preferredDate" type="date" />
+              <DatePicker
+                name="preferredDate"
+                label={t.booking.fields.date}
+                value={preferredDate}
+                onChange={setPreferredDate}
+              />
               <Field label={t.booking.fields.guests} name="guests" type="number" min="4" max="14" required />
               <Field label={t.booking.fields.location} name="location" type="text" />
             </div>
