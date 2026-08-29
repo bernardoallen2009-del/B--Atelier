@@ -54,9 +54,8 @@ export const menus: Record<Lang, Menu[]> = {
         },
         {
           label: "Main",
-          name: "Fresh Tagliatelle with Ragù",
-          description:
-            "Handmade egg pasta, cut into tagliatelle and served with a slow-cooked meat ragù, tomato, carrot, wine and aromatic herbs."
+          name: "Wild Mushroom Risotto",
+          description: "Creamy arborio rice with sautéed mushrooms, parmesan, butter and fresh herbs."
         },
         {
           label: "Dessert",
@@ -127,9 +126,8 @@ export const menus: Record<Lang, Menu[]> = {
         },
         {
           label: "Prato Principal",
-          name: "Tagliatelle Fresca com Ragù",
-          description:
-            "Massa de ovo feita à mão, cortada em tagliatelle e servida com um ragù de carne cozinhado lentamente, tomate, cenoura, vinho e ervas aromáticas."
+          name: "Risotto de Cogumelos Silvestres",
+          description: "Arroz arbóreo cremoso com cogumelos salteados, parmesão, manteiga e ervas frescas."
         },
         {
           label: "Sobremesa",
@@ -169,24 +167,36 @@ export const menus: Record<Lang, Menu[]> = {
 export const additionalDishes: Record<Lang, AdditionalDish[]> = {
   en: [
     {
-      name: "Wild Mushroom Risotto",
-      description: "Creamy arborio rice with sautéed mushrooms, parmesan, butter and fresh herbs."
+      name: "Fresh Tagliatelle with Ragù",
+      description:
+        "Handmade egg pasta, cut into tagliatelle and served with a slow-cooked meat ragù, tomato, carrot, wine and aromatic herbs."
     },
     {
       name: "Saffron Risotto, Almonds & Duck Magret",
       description:
         "Creamy arborio rice with saffron, toasted almonds and pink duck magret with golden, crisp skin."
+    },
+    {
+      name: "Chilled Gazpacho",
+      description:
+        "Chilled tomato soup with cucumber, onion, pepper and basil, finished with homemade croutons."
     }
   ],
   pt: [
     {
-      name: "Risotto de Cogumelos Silvestres",
-      description: "Arroz arbóreo cremoso com cogumelos salteados, parmesão, manteiga e ervas frescas."
+      name: "Tagliatelle Fresca com Ragù",
+      description:
+        "Massa de ovo feita à mão, cortada em tagliatelle e servida com um ragù de carne cozinhado lentamente, tomate, cenoura, vinho e ervas aromáticas."
     },
     {
       name: "Risotto de Açafrão, Amêndoas & Magret de Pato",
       description:
         "Arroz arbóreo cremoso com açafrão, amêndoas tostadas e magret de pato rosado com pele dourada e estaladiça."
+    },
+    {
+      name: "Gaspacho Fresco",
+      description:
+        "Sopa fria de tomate com pepino, cebola, pimento e manjericão, finalizada com crutons caseiros."
     }
   ]
 };

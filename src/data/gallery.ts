@@ -3,14 +3,13 @@ import chorizoCroquettes from "../assets/images/chorizo-croquettes.jpg";
 import corianderDuckRisotto from "../assets/images/coriander-duck-risotto.jpg";
 import focacciaRicotta from "../assets/images/focaccia-ricotta.jpg";
 import freshTagliatelle from "../assets/images/fresh-tagliatelle.jpg";
-import mushroomRisotto from "../assets/images/mushroom-risotto.jpg";
+import gazpacho from "../assets/images/gazpacho.jpg";
 import mushroomRisottoHerbs from "../assets/images/mushroom-risotto-herbs.jpg";
 import risottoPrawns from "../assets/images/risotto-prawns.jpg";
 import saffronDuckRisotto from "../assets/images/saffron-duck-risotto.jpg";
 import salmonTartare from "../assets/images/salmon-tartare.jpg";
 import strawberriesDessert from "../assets/images/strawberries-dessert.jpg";
 import tagliatelleRagu from "../assets/images/tagliatelle-ragu.jpg";
-import tartareService from "../assets/images/tartare-service.jpg";
 import tarteTatin from "../assets/images/tarte-tatin.jpg";
 import tarteTatinIceCream from "../assets/images/tarte-tatin-ice-cream.jpg";
 import type { Lang } from "../i18n/types";
@@ -79,24 +78,19 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       title: "Wild Mushroom Risotto"
     },
     {
-      src: mushroomRisotto,
-      alt: "Mushroom risotto served on a white plate",
-      title: "Mushroom Risotto"
-    },
-    {
       src: salmonTartare,
       alt: "Salmon tartare with avocado and coriander on a white plate",
       title: "Salmon Tartare"
     },
     {
-      src: tartareService,
-      alt: "Several salmon tartare portions arranged on a dark serving board",
-      title: "Tartare Service"
-    },
-    {
       src: tarteTatinIceCream,
       alt: "Apple tarte tatin served with homemade kiwi ice cream",
       title: "Tarte Tatin & Kiwi Ice Cream"
+    },
+    {
+      src: gazpacho,
+      alt: "Chilled gazpacho garnished with basil and homemade croutons in a white bowl",
+      title: "Chilled Gazpacho"
     }
   ],
   pt: [
@@ -156,24 +150,19 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       title: "Risotto de Cogumelos Silvestres"
     },
     {
-      src: mushroomRisotto,
-      alt: "Risotto de cogumelos servido num prato branco",
-      title: "Risotto de Cogumelos"
-    },
-    {
       src: salmonTartare,
       alt: "Tártaro de salmão com abacate e coentros num prato branco",
       title: "Tártaro de Salmão"
     },
     {
-      src: tartareService,
-      alt: "Várias porções de tártaro de salmão dispostas numa tábua escura",
-      title: "Serviço de Tártaro"
-    },
-    {
       src: tarteTatinIceCream,
       alt: "Tarte tatin de maçã servida com gelado caseiro de kiwi",
       title: "Tarte Tatin & Gelado de Kiwi"
+    },
+    {
+      src: gazpacho,
+      alt: "Gaspacho fresco decorado com manjericão e crutons caseiros num prato branco",
+      title: "Gaspacho Fresco"
     }
   ]
 };
