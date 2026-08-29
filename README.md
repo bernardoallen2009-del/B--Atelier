@@ -52,7 +52,7 @@ To change it, edit `bookingEmail` in `src/components/BookingForm.tsx`.
 The Instagram link is:
 
 ```text
-https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr
+https://www.instagram.com/be_atelier_?igsi=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr
 ```
 
 Change it in `src/components/BookingForm.tsx` and `src/components/Footer.tsx`.
