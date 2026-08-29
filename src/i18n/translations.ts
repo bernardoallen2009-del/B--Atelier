@@ -253,7 +253,7 @@ export const translations: Record<Lang, Translation> = {
         allergies: "Allergies or dietary restrictions",
         message: "Message"
       },
-      menuOptions: ["Bé Signature", "Italian Comfort", "Atelier Menu", "Custom / Not sure yet"],
+      menuOptions: ["Bé Signature", "Comfort", "Atelier Menu", "Custom / Not sure yet"],
       familyNightOptions: ["No", "Yes, family support for children"],
       submit: "Send request",
       confirmation: {
@@ -411,7 +411,7 @@ export const translations: Record<Lang, Translation> = {
         allergies: "Alergias ou restrições alimentares",
         message: "Mensagem"
       },
-      menuOptions: ["Bé Signature", "Conforto Italiano", "Menu Atelier", "Personalizado / Ainda não sei"],
+      menuOptions: ["Bé Signature", "Conforto", "Menu Atelier", "Personalizado / Ainda não sei"],
       familyNightOptions: ["Não", "Sim, apoio à família para crianças"],
       submit: "Enviar pedido",
       confirmation: {
