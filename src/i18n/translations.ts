@@ -183,14 +183,14 @@ export const translations: Record<Lang, Translation> = {
       cta: "Ask about Family Night",
       paragraph:
         "Created for young parents who want to enjoy a special dinner without leaving home. While Bé Atelier prepares and serves the meal, an additional team member can stay in a nearby room with the children, offering calm supervision and simple activities, always with the parents at home and available.",
-      quoteNote: "Family support counts as one additional guest in the final quote.",
+      quoteNote: "Family support is a flat EUR 40, plus EUR 5 per child, added to the final quote.",
       includesEyebrow: "Includes",
       includes: [
         "Calm activities in a nearby room",
         "Parents always at home and available",
         "Ideal for young families",
         "Available as an add-on to private dinners",
-        "Priced as one additional guest"
+        "EUR 40 flat, plus EUR 5 per child"
       ],
       stepsEyebrow: "How it works",
       steps: [
@@ -224,7 +224,7 @@ export const translations: Record<Lang, Translation> = {
         "A small jar of homemade granola with oats, nuts, honey and warm spices, prepared as a thank-you gift for the next morning.",
       notes: [
         "Drinks, tableware rental and special premium ingredients are not included unless agreed in advance.",
-        "Family Night support is charged as one additional guest in the final quote.",
+        "Family Night support is a flat EUR 40, plus EUR 5 per child, added to the final quote.",
         "Final price may vary for highly customised menus or locations outside Lisbon."
       ]
     },
@@ -341,14 +341,14 @@ export const translations: Record<Lang, Translation> = {
       cta: "Perguntar sobre a Noite em Família",
       paragraph:
         "Pensada para pais jovens que querem desfrutar de um jantar especial sem sair de casa. Enquanto a Bé Atelier prepara e serve a refeição, um elemento adicional da equipa pode ficar numa divisão próxima com as crianças, oferecendo supervisão tranquila e atividades simples, sempre com os pais em casa e disponíveis.",
-      quoteNote: "O apoio à família conta como um convidado adicional no orçamento final.",
+      quoteNote: "O apoio à família tem um custo fixo de 40€, mais 5€ por criança, acrescido ao orçamento final.",
       includesEyebrow: "Inclui",
       includes: [
         "Atividades tranquilas numa divisão próxima",
         "Pais sempre em casa e disponíveis",
         "Ideal para famílias jovens",
         "Disponível como extra aos jantares privados",
-        "Cobrado como um convidado adicional"
+        "40€ fixos, mais 5€ por criança"
       ],
       stepsEyebrow: "Como funciona",
       steps: [
@@ -382,7 +382,7 @@ export const translations: Record<Lang, Translation> = {
         "Um pequeno frasco de granola caseira com aveia, frutos secos, mel e especiarias quentes, preparado como prenda de agradecimento para a manhã seguinte.",
       notes: [
         "Bebidas, aluguer de loiça e ingredientes premium especiais não estão incluídos, salvo acordo prévio.",
-        "O apoio da Noite em Família é cobrado como um convidado adicional no orçamento final.",
+        "O apoio da Noite em Família tem um custo fixo de 40€, mais 5€ por criança, acrescido ao orçamento final.",
         "O preço final pode variar para menus muito personalizados ou localizações fora de Lisboa."
       ]
     },
