@@ -96,6 +96,10 @@ export type Translation = {
     menuOptions: string[];
     familyNightOptions: string[];
     submit: string;
+    confirmation: {
+      heading: string;
+      body: string;
+    };
     mail: {
       subject: string;
       heading: string;
@@ -252,6 +256,10 @@ export const translations: Record<Lang, Translation> = {
       menuOptions: ["Bé Signature", "Italian Comfort", "Atelier Menu", "Custom / Not sure yet"],
       familyNightOptions: ["No", "Yes, family support for children"],
       submit: "Send request",
+      confirmation: {
+        heading: "Request ready to send",
+        body: "Your email app should have opened with everything filled in. If nothing happened, email us directly at"
+      },
       mail: {
         subject: "Private dinner request - Bé Atelier",
         heading: "New private dinner request",
@@ -283,7 +291,7 @@ export const translations: Record<Lang, Translation> = {
       linkEmail: "Email",
       linkMenus: "Menus",
       linkBook: "Book",
-      copyright: "© 2026 Bé Atelier. All rights reserved."
+      copyright: "© {year} Bé Atelier. All rights reserved."
     }
   },
   pt: {
@@ -406,6 +414,10 @@ export const translations: Record<Lang, Translation> = {
       menuOptions: ["Bé Signature", "Conforto Italiano", "Menu Atelier", "Personalizado / Ainda não sei"],
       familyNightOptions: ["Não", "Sim, apoio à família para crianças"],
       submit: "Enviar pedido",
+      confirmation: {
+        heading: "Pedido pronto a enviar",
+        body: "A sua aplicação de email deve ter aberto com tudo preenchido. Se nada aconteceu, contacte-nos diretamente em"
+      },
       mail: {
         subject: "Pedido de jantar privado - Bé Atelier",
         heading: "Novo pedido de jantar privado",
@@ -437,7 +449,7 @@ export const translations: Record<Lang, Translation> = {
       linkEmail: "E-mail",
       linkMenus: "Menus",
       linkBook: "Reservar",
-      copyright: "© 2026 Bé Atelier. Todos os direitos reservados."
+      copyright: "© {year} Bé Atelier. Todos os direitos reservados."
     }
   }
 };

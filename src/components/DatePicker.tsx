@@ -1,3 +1,4 @@
+import type { FocusEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
 import type { Lang } from "../i18n/types";
@@ -111,8 +112,18 @@ export default function DatePicker({ name, label, value, onChange }: DatePickerP
     ? new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric" }).format(selectedDate)
     : t.booking.fields.dateSelectPlaceholder;
 
+  function handleBlur(event: FocusEvent<HTMLDivElement>) {
+    if (containerRef.current && !containerRef.current.contains(event.relatedTarget as Node)) {
+      setIsOpen(false);
+    }
+  }
+
   return (
-    <div ref={containerRef} className="relative grid gap-2 text-sm font-medium text-charcoal">
+    <div
+      ref={containerRef}
+      onBlur={handleBlur}
+      className="relative grid gap-2 text-sm font-medium text-charcoal"
+    >
       <span id={`${name}-label`}>{label}</span>
       <button
         type="button"

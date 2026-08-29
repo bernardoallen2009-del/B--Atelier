@@ -68,6 +68,7 @@ export default function BookingForm() {
   const { t, language } = useLanguage();
   const [familyNight, setFamilyNight] = useState(t.booking.familyNightOptions[0]);
   const [preferredDate, setPreferredDate] = useState("");
+  const [confirmationMailto, setConfirmationMailto] = useState<string | null>(null);
   const wantsFamilyNight = familyNight === t.booking.familyNightOptions[1];
 
   useEffect(() => {
@@ -76,7 +77,9 @@ export default function BookingForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = buildMailto(new FormData(event.currentTarget), t, language);
+    const mailtoUrl = buildMailto(new FormData(event.currentTarget), t, language);
+    setConfirmationMailto(mailtoUrl);
+    window.location.href = mailtoUrl;
   }
 
   function handleFamilyNightChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -168,6 +171,21 @@ export default function BookingForm() {
             >
               {t.booking.submit}
             </button>
+
+            {confirmationMailto ? (
+              <div className="fine-border bg-ivory/70 p-4 sm:p-5" role="status">
+                <p className="text-sm font-semibold text-charcoal">{t.booking.confirmation.heading}</p>
+                <p className="mt-2 text-sm leading-6 text-warmgray">
+                  {t.booking.confirmation.body}{" "}
+                  <a
+                    href={confirmationMailto}
+                    className="font-semibold text-clay underline underline-offset-2 transition hover:text-charcoal"
+                  >
+                    {bookingEmail}
+                  </a>
+                </p>
+              </div>
+            ) : null}
           </form>
         </div>
       </div>

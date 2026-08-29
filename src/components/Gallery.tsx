@@ -17,8 +17,7 @@ const galleryAspectRatios = [
   "aspect-square",
   "aspect-square sm:aspect-[4/5]",
   "aspect-square",
-  "aspect-square sm:aspect-[4/5]",
-  "aspect-square"
+  "aspect-square sm:aspect-[4/5]"
 ];
 
 export default function Gallery() {

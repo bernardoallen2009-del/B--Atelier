@@ -45,7 +45,7 @@ export const menus: Record<Lang, Menu[]> = {
     },
     {
       name: "Italian Comfort",
-      tone: "Handmade pasta, slow cooking and familiar warmth.",
+      tone: "Slow cooking, rich flavours and familiar warmth.",
       courses: [
         {
           label: "Starter",
@@ -117,7 +117,7 @@ export const menus: Record<Lang, Menu[]> = {
     },
     {
       name: "Conforto Italiano",
-      tone: "Massa feita à mão, cozinha lenta e um calor familiar.",
+      tone: "Cozinha lenta, sabores intensos e um calor familiar.",
       courses: [
         {
           label: "Entrada",

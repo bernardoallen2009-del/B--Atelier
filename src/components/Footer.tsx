@@ -33,7 +33,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-warmgray">{t.footer.copyright}</p>
+          <p className="text-xs text-warmgray">
+            {t.footer.copyright.replace("{year}", String(new Date().getFullYear()))}
+          </p>
         </div>
       </div>
     </footer>

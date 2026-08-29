@@ -8,7 +8,7 @@ export default {
         linen: "#ECE4D8",
         charcoal: "#1E1E1C",
         warmgray: "#6F6A61",
-        clay: "#A48668",
+        clay: "#7B644E",
         olive: "#74745D"
       },
       fontFamily: {
