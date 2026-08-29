@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { galleryImages, type GalleryImage } from "../data/gallery";
 import SectionTitle from "./SectionTitle";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const galleryAspectRatios = [
   "aspect-square sm:aspect-[4/5]",
@@ -22,28 +23,32 @@ const galleryAspectRatios = [
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const { t, language } = useLanguage();
+  const images = galleryImages[language];
 
   return (
     <section id="gallery" className="anchor-section section-spacing bg-white/35">
       <div className="section-shell">
         <SectionTitle
-          eyebrow="Gallery"
-          title="Gallery"
-          subtitle="Food, details and moments from previous dinners."
+          eyebrow={t.gallery.eyebrow}
+          title={t.gallery.title}
+          subtitle={t.gallery.subtitle}
         />
 
         <div className="mt-8 grid grid-cols-2 gap-2.5 sm:mt-12 sm:gap-4 lg:grid-cols-3">
-          {galleryImages.map((image, index) => (
+          {images.map((image, index) => (
             <button
               key={image.title}
               type="button"
               onClick={() => setSelectedImage(image)}
               className={`group relative overflow-hidden rounded-sm bg-linen text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 ${galleryAspectRatios[index] ?? "aspect-square"}`}
-              aria-label={`Open image: ${image.title}`}
+              aria-label={`${t.gallery.openImageLabel}: ${image.title}`}
             >
               <img
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
               />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-charcoal/55 to-transparent p-3 pt-10 text-xs font-medium text-white opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100 sm:p-4 sm:pt-16 sm:text-sm">
@@ -67,7 +72,7 @@ export default function Gallery() {
             className="absolute right-5 top-5 rounded-full bg-ivory px-4 py-2 text-sm font-semibold text-charcoal transition hover:bg-linen focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={() => setSelectedImage(null)}
           >
-            Close
+            {t.gallery.closeButton}
           </button>
           <figure className="max-h-[88vh] max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <img

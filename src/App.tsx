@@ -7,21 +7,24 @@ import Hero from "./components/Hero";
 import FamilyNight from "./components/FamilyNight";
 import Menus from "./components/Menus";
 import Pricing from "./components/Pricing";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ivory text-charcoal">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Menus />
-        <Gallery />
-        <FamilyNight />
-        <Pricing />
-        <BookingForm />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-ivory text-charcoal">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Menus />
+          <Gallery />
+          <FamilyNight />
+          <Pricing />
+          <BookingForm />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

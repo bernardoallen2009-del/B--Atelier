@@ -13,6 +13,7 @@ import tagliatelleRagu from "../assets/images/tagliatelle-ragu.jpg";
 import tartareService from "../assets/images/tartare-service.jpg";
 import tarteTatin from "../assets/images/tarte-tatin.jpg";
 import tarteTatinIceCream from "../assets/images/tarte-tatin-ice-cream.jpg";
+import type { Lang } from "../i18n/types";
 
 export type GalleryImage = {
   src: string;
@@ -20,80 +21,159 @@ export type GalleryImage = {
   title: string;
 };
 
-export const galleryImages: GalleryImage[] = [
-  {
-    src: risottoPrawns,
-    alt: "Pumpkin risotto with prawns served on a ceramic plate",
-    title: "Pumpkin Risotto & Prawns"
-  },
-  {
-    src: focacciaRicotta,
-    alt: "Homemade focaccia with whipped ricotta and honey",
-    title: "Focaccia, Ricotta & Honey"
-  },
-  {
-    src: strawberriesDessert,
-    alt: "Strawberry dessert with vanilla cream and crumble",
-    title: "Strawberries, Vanilla & Speculoos"
-  },
-  {
-    src: saffronDuckRisotto,
-    alt: "Saffron risotto with duck magret and toasted almonds",
-    title: "Duck Magret & Saffron Risotto"
-  },
-  {
-    src: tagliatelleRagu,
-    alt: "Fresh tagliatelle with slow cooked meat ragù",
-    title: "Tagliatelle with Ragù"
-  },
-  {
-    src: tarteTatin,
-    alt: "Apple tarte tatin with kiwi ice cream",
-    title: "Tarte Tatin"
-  },
-  {
-    src: chorizoCroquettes,
-    alt: "Crisp chorizo and beef croquettes on a dark serving board",
-    title: "Chorizo & Beef Croquettes"
-  },
-  {
-    src: arrozDoceBrule,
-    alt: "Portuguese rice pudding with caramelised brûlé top",
-    title: "Arroz Doce Brûlé"
-  },
-  {
-    src: freshTagliatelle,
-    alt: "Fresh handmade tagliatelle cut on a dark work surface",
-    title: "Fresh Tagliatelle"
-  },
-  {
-    src: corianderDuckRisotto,
-    alt: "Coriander risotto with duck magret and orange gel",
-    title: "Coriander Risotto & Duck Magret"
-  },
-  {
-    src: mushroomRisottoHerbs,
-    alt: "Wild mushroom risotto finished with fresh herbs",
-    title: "Wild Mushroom Risotto"
-  },
-  {
-    src: mushroomRisotto,
-    alt: "Mushroom risotto served on a white plate",
-    title: "Mushroom Risotto"
-  },
-  {
-    src: salmonTartare,
-    alt: "Salmon tartare with avocado and coriander on a white plate",
-    title: "Salmon Tartare"
-  },
-  {
-    src: tartareService,
-    alt: "Several salmon tartare portions arranged on a dark serving board",
-    title: "Tartare Service"
-  },
-  {
-    src: tarteTatinIceCream,
-    alt: "Apple tarte tatin served with homemade kiwi ice cream",
-    title: "Tarte Tatin & Kiwi Ice Cream"
-  }
-];
+export const galleryImages: Record<Lang, GalleryImage[]> = {
+  en: [
+    {
+      src: risottoPrawns,
+      alt: "Pumpkin risotto with prawns served on a ceramic plate",
+      title: "Pumpkin Risotto & Prawns"
+    },
+    {
+      src: focacciaRicotta,
+      alt: "Homemade focaccia with whipped ricotta and honey",
+      title: "Focaccia, Ricotta & Honey"
+    },
+    {
+      src: strawberriesDessert,
+      alt: "Strawberry dessert with vanilla cream and crumble",
+      title: "Strawberries, Vanilla & Speculoos"
+    },
+    {
+      src: saffronDuckRisotto,
+      alt: "Saffron risotto with duck magret and toasted almonds",
+      title: "Duck Magret & Saffron Risotto"
+    },
+    {
+      src: tagliatelleRagu,
+      alt: "Fresh tagliatelle with slow cooked meat ragù",
+      title: "Tagliatelle with Ragù"
+    },
+    {
+      src: tarteTatin,
+      alt: "Apple tarte tatin with kiwi ice cream",
+      title: "Tarte Tatin"
+    },
+    {
+      src: chorizoCroquettes,
+      alt: "Crisp chorizo and beef croquettes on a dark serving board",
+      title: "Chorizo & Beef Croquettes"
+    },
+    {
+      src: arrozDoceBrule,
+      alt: "Portuguese rice pudding with caramelised brûlé top",
+      title: "Arroz Doce Brûlé"
+    },
+    {
+      src: freshTagliatelle,
+      alt: "Fresh handmade tagliatelle cut on a dark work surface",
+      title: "Fresh Tagliatelle"
+    },
+    {
+      src: corianderDuckRisotto,
+      alt: "Coriander risotto with duck magret and orange gel",
+      title: "Coriander Risotto & Duck Magret"
+    },
+    {
+      src: mushroomRisottoHerbs,
+      alt: "Wild mushroom risotto finished with fresh herbs",
+      title: "Wild Mushroom Risotto"
+    },
+    {
+      src: mushroomRisotto,
+      alt: "Mushroom risotto served on a white plate",
+      title: "Mushroom Risotto"
+    },
+    {
+      src: salmonTartare,
+      alt: "Salmon tartare with avocado and coriander on a white plate",
+      title: "Salmon Tartare"
+    },
+    {
+      src: tartareService,
+      alt: "Several salmon tartare portions arranged on a dark serving board",
+      title: "Tartare Service"
+    },
+    {
+      src: tarteTatinIceCream,
+      alt: "Apple tarte tatin served with homemade kiwi ice cream",
+      title: "Tarte Tatin & Kiwi Ice Cream"
+    }
+  ],
+  pt: [
+    {
+      src: risottoPrawns,
+      alt: "Risotto de abóbora com camarão servido num prato de cerâmica",
+      title: "Risotto de Abóbora & Camarão"
+    },
+    {
+      src: focacciaRicotta,
+      alt: "Focaccia caseira com ricotta batida e mel",
+      title: "Focaccia, Ricotta & Mel"
+    },
+    {
+      src: strawberriesDessert,
+      alt: "Sobremesa de morango com creme de baunilha e crumble",
+      title: "Morangos, Baunilha & Speculoos"
+    },
+    {
+      src: saffronDuckRisotto,
+      alt: "Risotto de açafrão com magret de pato e amêndoas tostadas",
+      title: "Magret de Pato & Risotto de Açafrão"
+    },
+    {
+      src: tagliatelleRagu,
+      alt: "Tagliatelle fresca com ragù de carne cozinhado lentamente",
+      title: "Tagliatelle com Ragù"
+    },
+    {
+      src: tarteTatin,
+      alt: "Tarte tatin de maçã com gelado de kiwi",
+      title: "Tarte Tatin"
+    },
+    {
+      src: chorizoCroquettes,
+      alt: "Croquetes crocantes de chouriço e vaca numa tábua escura",
+      title: "Croquetes de Chouriço & Vaca"
+    },
+    {
+      src: arrozDoceBrule,
+      alt: "Arroz doce português com o topo caramelizado",
+      title: "Arroz Doce Brûlé"
+    },
+    {
+      src: freshTagliatelle,
+      alt: "Tagliatelle fresca feita à mão, cortada numa bancada escura",
+      title: "Tagliatelle Fresca"
+    },
+    {
+      src: corianderDuckRisotto,
+      alt: "Risotto de coentros com magret de pato e gel de laranja",
+      title: "Risotto de Coentros & Magret de Pato"
+    },
+    {
+      src: mushroomRisottoHerbs,
+      alt: "Risotto de cogumelos silvestres finalizado com ervas frescas",
+      title: "Risotto de Cogumelos Silvestres"
+    },
+    {
+      src: mushroomRisotto,
+      alt: "Risotto de cogumelos servido num prato branco",
+      title: "Risotto de Cogumelos"
+    },
+    {
+      src: salmonTartare,
+      alt: "Tártaro de salmão com abacate e coentros num prato branco",
+      title: "Tártaro de Salmão"
+    },
+    {
+      src: tartareService,
+      alt: "Várias porções de tártaro de salmão dispostas numa tábua escura",
+      title: "Serviço de Tártaro"
+    },
+    {
+      src: tarteTatinIceCream,
+      alt: "Tarte tatin de maçã servida com gelado caseiro de kiwi",
+      title: "Tarte Tatin & Gelado de Kiwi"
+    }
+  ]
+};

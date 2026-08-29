@@ -1,63 +1,67 @@
 import type { ChangeEvent, FormEvent } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "./SectionTitle";
+import { useLanguage } from "../i18n/LanguageContext";
+import type { Translation } from "../i18n/translations";
 
 const bookingEmail = "bernardoallen@icloud.com";
 const instagramUrl =
   "https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr";
 
-const menuOptions = ["Bé Signature", "Italian Comfort", "Atelier Menu", "Custom / Not sure yet"];
-const familyNightOptions = ["No", "Yes, family support for children"];
-
 function getField(formData: FormData, name: string) {
   return String(formData.get(name) ?? "").trim();
 }
 
-function buildMailto(formData: FormData) {
-  const subject = "Private dinner request - Bé Atelier";
+function buildMailto(formData: FormData, t: Translation) {
+  const mail = t.booking.mail;
   const familyNight = getField(formData, "familyNight");
   const familyNightDetails =
-    familyNight === familyNightOptions[1]
+    familyNight === t.booking.familyNightOptions[1]
       ? [
           "",
-          "Family Night details:",
-          `Number of children: ${getField(formData, "childrenCount") || "Not shared"}`,
-          `Ages of children: ${getField(formData, "childrenAges") || "Not shared"}`,
-          `Allergies or important information: ${getField(formData, "childrenInfo") || "None shared"}`,
-          `Preferred activities / screen time allowed: ${getField(formData, "childrenActivities") || "Not shared"}`,
-          `Bedtime routine or special notes: ${getField(formData, "childrenRoutine") || "Not shared"}`
+          mail.familyNightDetailsHeading,
+          `${mail.childrenCount}: ${getField(formData, "childrenCount") || mail.notShared}`,
+          `${mail.childrenAges}: ${getField(formData, "childrenAges") || mail.notShared}`,
+          `${mail.childrenAllergies}: ${getField(formData, "childrenInfo") || mail.noneShared}`,
+          `${mail.childrenActivities}: ${getField(formData, "childrenActivities") || mail.notShared}`,
+          `${mail.childrenRoutine}: ${getField(formData, "childrenRoutine") || mail.notShared}`
         ]
       : [];
   const body = [
-    "New private dinner request",
+    mail.heading,
     "",
-    `Name: ${getField(formData, "name")}`,
-    `Email: ${getField(formData, "email")}`,
-    `Phone / WhatsApp: ${getField(formData, "phone")}`,
-    `Preferred date: ${getField(formData, "preferredDate")}`,
-    `Number of guests: ${getField(formData, "guests")}`,
-    `Location: ${getField(formData, "location")}`,
-    `Menu preference: ${getField(formData, "menuPreference")}`,
-    `Family Night support: ${familyNight}`,
+    `${mail.name}: ${getField(formData, "name")}`,
+    `${mail.email}: ${getField(formData, "email")}`,
+    `${mail.phone}: ${getField(formData, "phone")}`,
+    `${mail.date}: ${getField(formData, "preferredDate")}`,
+    `${mail.guests}: ${getField(formData, "guests")}`,
+    `${mail.location}: ${getField(formData, "location")}`,
+    `${mail.menuPreference}: ${getField(formData, "menuPreference")}`,
+    `${mail.familyNightSupport}: ${familyNight}`,
     ...familyNightDetails,
     "",
-    "Allergies or dietary restrictions:",
-    getField(formData, "allergies") || "None shared",
+    mail.allergiesHeading,
+    getField(formData, "allergies") || mail.noneShared,
     "",
-    "Message:",
-    getField(formData, "message") || "No extra message"
+    mail.messageHeading,
+    getField(formData, "message") || mail.noExtraMessage
   ].join("\n");
 
-  return `mailto:${bookingEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `mailto:${bookingEmail}?subject=${encodeURIComponent(mail.subject)}&body=${encodeURIComponent(body)}`;
 }
 
 export default function BookingForm() {
-  const [familyNight, setFamilyNight] = useState(familyNightOptions[0]);
-  const wantsFamilyNight = familyNight === familyNightOptions[1];
+  const { t, language } = useLanguage();
+  const [familyNight, setFamilyNight] = useState(t.booking.familyNightOptions[0]);
+  const wantsFamilyNight = familyNight === t.booking.familyNightOptions[1];
+
+  useEffect(() => {
+    setFamilyNight(t.booking.familyNightOptions[0]);
+  }, [language, t.booking.familyNightOptions]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = buildMailto(new FormData(event.currentTarget));
+    window.location.href = buildMailto(new FormData(event.currentTarget), t);
   }
 
   function handleFamilyNightChange(event: ChangeEvent<HTMLSelectElement>) {
@@ -70,9 +74,9 @@ export default function BookingForm() {
         <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
           <div>
             <SectionTitle
-              eyebrow="Book"
-              title="Book a private dinner"
-              subtitle="Tell us a little about your dinner and we'll get back to you."
+              eyebrow={t.booking.eyebrow}
+              title={t.booking.title}
+              subtitle={t.booking.subtitle}
             />
             <a
               href={instagramUrl}
@@ -80,42 +84,44 @@ export default function BookingForm() {
               rel="noreferrer"
               className="mt-6 inline-flex rounded-full border border-charcoal/20 px-5 py-3 text-sm font-semibold text-charcoal transition hover:border-clay hover:text-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/40 sm:mt-8"
             >
-              Contact on Instagram
+              {t.booking.instagramCta}
             </a>
           </div>
 
           <form onSubmit={handleSubmit} className="grid gap-4 sm:gap-5">
             <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-              <Field label="Name" name="name" type="text" required />
-              <Field label="Email" name="email" type="email" required />
-              <Field label="Phone / WhatsApp" name="phone" type="tel" />
-              <Field label="Preferred date" name="preferredDate" type="date" />
-              <Field label="Number of guests" name="guests" type="number" min="4" max="14" />
-              <Field label="Location" name="location" type="text" />
+              <Field label={t.booking.fields.name} name="name" type="text" required />
+              <Field label={t.booking.fields.email} name="email" type="email" required />
+              <Field label={t.booking.fields.phone} name="phone" type="tel" />
+              <Field label={t.booking.fields.date} name="preferredDate" type="date" />
+              <Field label={t.booking.fields.guests} name="guests" type="number" min="4" max="14" required />
+              <Field label={t.booking.fields.location} name="location" type="text" />
             </div>
 
             <label className="grid gap-2 text-sm font-medium text-charcoal">
-              Menu preference
+              {t.booking.fields.menuPreference}
               <select
+                key={`menu-${language}`}
                 name="menuPreference"
                 className="rounded-none border border-charcoal/15 bg-ivory px-4 py-3 text-charcoal outline-none transition focus:border-clay focus:ring-2 focus:ring-clay/20"
-                defaultValue="Bé Signature"
+                defaultValue={t.booking.menuOptions[0]}
               >
-                {menuOptions.map((option) => (
+                {t.booking.menuOptions.map((option) => (
                   <option key={option}>{option}</option>
                 ))}
               </select>
             </label>
 
             <label className="grid gap-2 text-sm font-medium text-charcoal">
-              Would you like to add Family Night support?
+              {t.booking.fields.familyNightQuestion}
               <select
+                key={`family-${language}`}
                 name="familyNight"
                 className="rounded-none border border-charcoal/15 bg-ivory px-4 py-3 text-charcoal outline-none transition focus:border-clay focus:ring-2 focus:ring-clay/20"
                 value={familyNight}
                 onChange={handleFamilyNightChange}
               >
-                {familyNightOptions.map((option) => (
+                {t.booking.familyNightOptions.map((option) => (
                   <option key={option}>{option}</option>
                 ))}
               </select>
@@ -123,24 +129,24 @@ export default function BookingForm() {
 
             {wantsFamilyNight ? (
               <div className="fine-border grid gap-4 bg-ivory/70 p-4 sm:grid-cols-2 sm:gap-5 sm:p-5">
-                <Field label="Number of children" name="childrenCount" type="number" min="1" />
-                <Field label="Ages of children" name="childrenAges" type="text" />
-                <TextArea label="Any allergies or important information?" name="childrenInfo" rows={3} />
-                <TextArea label="Preferred activities / screen time allowed?" name="childrenActivities" rows={3} />
+                <Field label={t.booking.fields.childrenCount} name="childrenCount" type="number" min="1" />
+                <Field label={t.booking.fields.childrenAges} name="childrenAges" type="text" />
+                <TextArea label={t.booking.fields.childrenAllergies} name="childrenInfo" rows={3} />
+                <TextArea label={t.booking.fields.childrenActivities} name="childrenActivities" rows={3} />
                 <div className="sm:col-span-2">
-                  <TextArea label="Bedtime routine or special notes?" name="childrenRoutine" rows={3} />
+                  <TextArea label={t.booking.fields.childrenRoutine} name="childrenRoutine" rows={3} />
                 </div>
               </div>
             ) : null}
 
-            <TextArea label="Allergies or dietary restrictions" name="allergies" rows={3} />
-            <TextArea label="Message" name="message" rows={5} />
+            <TextArea label={t.booking.fields.allergies} name="allergies" rows={3} />
+            <TextArea label={t.booking.fields.message} name="message" rows={5} />
 
             <button
               type="submit"
               className="mt-2 inline-flex w-full justify-center rounded-full bg-charcoal px-6 py-3.5 text-sm font-semibold text-ivory transition hover:bg-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 sm:w-auto sm:py-4"
             >
-              Send request
+              {t.booking.submit}
             </button>
           </form>
         </div>
