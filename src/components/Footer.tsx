@@ -6,7 +6,7 @@ export default function Footer() {
   const links = [
     {
       label: t.footer.linkInstagram,
-      href: "https://www.instagram.com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr"
+      href: "https://www.instagram.com/be_atelier_"
     },
     { label: t.footer.linkEmail, href: "mailto:bernardoallen@icloud.com" },
     { label: t.footer.linkMenus, href: "#menus" },

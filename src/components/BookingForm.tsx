@@ -7,8 +7,7 @@ import type { Lang } from "../i18n/types";
 import type { Translation } from "../i18n/translations";
 
 const bookingEmail = "bernardoallen@icloud.com";
-const instagramUrl =
-  "https://www..com/allen_cook_photography?igsh=MWVxMWIyOGtoZ292bA%3D%3D&utm_source=qr";
+const instagramUrl = "https://www.instagram.com/be_atelier_";
 
 function getField(formData: FormData, name: string) {
   return String(formData.get(name) ?? "").trim();
