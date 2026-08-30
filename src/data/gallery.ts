@@ -22,20 +22,32 @@ export type GalleryImage = {
 
 export const galleryImages: Record<Lang, GalleryImage[]> = {
   en: [
-    {
-      src: risottoPrawns,
-      alt: "Pumpkin risotto with prawns served on a ceramic plate",
-      title: "Pumpkin Risotto & Prawns"
-    },
+    // Starters
     {
       src: focacciaRicotta,
       alt: "Homemade focaccia with whipped ricotta and honey",
       title: "Focaccia, Ricotta & Honey"
     },
     {
-      src: strawberriesDessert,
-      alt: "Strawberry dessert with vanilla cream and crumble",
-      title: "Strawberries, Vanilla & Speculoos"
+      src: chorizoCroquettes,
+      alt: "Crisp chorizo and beef croquettes on a dark serving board",
+      title: "Chorizo & Beef Croquettes"
+    },
+    {
+      src: salmonTartare,
+      alt: "Salmon tartare with avocado and coriander on a white plate",
+      title: "Salmon Tartare"
+    },
+    {
+      src: gazpacho,
+      alt: "Chilled gazpacho garnished with basil and homemade croutons in a white bowl",
+      title: "Chilled Gazpacho"
+    },
+    // Mains
+    {
+      src: risottoPrawns,
+      alt: "Pumpkin risotto with prawns served on a ceramic plate",
+      title: "Pumpkin Risotto & Prawns"
     },
     {
       src: saffronDuckRisotto,
@@ -46,21 +58,6 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       src: tagliatelleRagu,
       alt: "Fresh tagliatelle with slow cooked meat ragù",
       title: "Tagliatelle with Ragù"
-    },
-    {
-      src: tarteTatin,
-      alt: "Apple tarte tatin with kiwi ice cream",
-      title: "Tarte Tatin"
-    },
-    {
-      src: chorizoCroquettes,
-      alt: "Crisp chorizo and beef croquettes on a dark serving board",
-      title: "Chorizo & Beef Croquettes"
-    },
-    {
-      src: arrozDoceBrule,
-      alt: "Portuguese rice pudding with caramelised brûlé top",
-      title: "Arroz Doce Brûlé"
     },
     {
       src: freshTagliatelle,
@@ -77,37 +74,55 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       alt: "Wild mushroom risotto finished with fresh herbs",
       title: "Wild Mushroom Risotto"
     },
+    // Desserts
     {
-      src: salmonTartare,
-      alt: "Salmon tartare with avocado and coriander on a white plate",
-      title: "Salmon Tartare"
+      src: strawberriesDessert,
+      alt: "Strawberry dessert with vanilla cream and crumble",
+      title: "Strawberries, Vanilla & Speculoos"
+    },
+    {
+      src: tarteTatin,
+      alt: "Apple tarte tatin with kiwi ice cream",
+      title: "Tarte Tatin"
+    },
+    {
+      src: arrozDoceBrule,
+      alt: "Portuguese rice pudding with caramelised brûlé top",
+      title: "Arroz Doce Brûlé"
     },
     {
       src: tarteTatinIceCream,
       alt: "Apple tarte tatin served with homemade kiwi ice cream",
       title: "Tarte Tatin & Kiwi Ice Cream"
-    },
-    {
-      src: gazpacho,
-      alt: "Chilled gazpacho garnished with basil and homemade croutons in a white bowl",
-      title: "Chilled Gazpacho"
     }
   ],
   pt: [
-    {
-      src: risottoPrawns,
-      alt: "Risotto de abóbora com camarão servido num prato de cerâmica",
-      title: "Risotto de Abóbora & Camarão"
-    },
+    // Entradas
     {
       src: focacciaRicotta,
       alt: "Focaccia caseira com ricotta batida e mel",
       title: "Focaccia, Ricotta & Mel"
     },
     {
-      src: strawberriesDessert,
-      alt: "Sobremesa de morango com creme de baunilha e crumble",
-      title: "Morangos, Baunilha & Speculoos"
+      src: chorizoCroquettes,
+      alt: "Croquetes crocantes de chouriço e vaca numa tábua escura",
+      title: "Croquetes de Chouriço & Vaca"
+    },
+    {
+      src: salmonTartare,
+      alt: "Tártaro de salmão com abacate e coentros num prato branco",
+      title: "Tártaro de Salmão"
+    },
+    {
+      src: gazpacho,
+      alt: "Gaspacho fresco decorado com manjericão e crutons caseiros num prato branco",
+      title: "Gaspacho Fresco"
+    },
+    // Pratos principais
+    {
+      src: risottoPrawns,
+      alt: "Risotto de abóbora com camarão servido num prato de cerâmica",
+      title: "Risotto de Abóbora & Camarão"
     },
     {
       src: saffronDuckRisotto,
@@ -118,21 +133,6 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       src: tagliatelleRagu,
       alt: "Tagliatelle fresca com ragù de carne cozinhado lentamente",
       title: "Tagliatelle com Ragù"
-    },
-    {
-      src: tarteTatin,
-      alt: "Tarte tatin de maçã com gelado de kiwi",
-      title: "Tarte Tatin"
-    },
-    {
-      src: chorizoCroquettes,
-      alt: "Croquetes crocantes de chouriço e vaca numa tábua escura",
-      title: "Croquetes de Chouriço & Vaca"
-    },
-    {
-      src: arrozDoceBrule,
-      alt: "Arroz doce português com o topo caramelizado",
-      title: "Arroz Doce Brûlé"
     },
     {
       src: freshTagliatelle,
@@ -149,20 +149,26 @@ export const galleryImages: Record<Lang, GalleryImage[]> = {
       alt: "Risotto de cogumelos silvestres finalizado com ervas frescas",
       title: "Risotto de Cogumelos Silvestres"
     },
+    // Sobremesas
     {
-      src: salmonTartare,
-      alt: "Tártaro de salmão com abacate e coentros num prato branco",
-      title: "Tártaro de Salmão"
+      src: strawberriesDessert,
+      alt: "Sobremesa de morango com creme de baunilha e crumble",
+      title: "Morangos, Baunilha & Speculoos"
+    },
+    {
+      src: tarteTatin,
+      alt: "Tarte tatin de maçã com gelado de kiwi",
+      title: "Tarte Tatin"
+    },
+    {
+      src: arrozDoceBrule,
+      alt: "Arroz doce português com o topo caramelizado",
+      title: "Arroz Doce Brûlé"
     },
     {
       src: tarteTatinIceCream,
       alt: "Tarte tatin de maçã servida com gelado caseiro de kiwi",
       title: "Tarte Tatin & Gelado de Kiwi"
-    },
-    {
-      src: gazpacho,
-      alt: "Gaspacho fresco decorado com manjericão e crutons caseiros num prato branco",
-      title: "Gaspacho Fresco"
     }
   ]
 };
